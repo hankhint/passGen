@@ -10,3 +10,6 @@ Random Password Generator
 
 
 ## I'm really not done with this, but I am submitting this because I plan to actually finish at some point in the future.
+
+## Link to the deployed site
+https://hankhint.github.io/passGen/
