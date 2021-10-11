@@ -13,3 +13,5 @@ Random Password Generator
 
 ## Link to the deployed site
 https://hankhint.github.io/passGen/
+
+![image](https://user-images.githubusercontent.com/50533231/136734269-ce8c6cc6-8e40-4c9d-a294-f4cf31f8563b.png)
