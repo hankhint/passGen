@@ -1,4 +1,4 @@
-const passLengthEl = document.getElementById("passLength");
+const passLengthBoxEl = document.getElementById("passLengthBox");
 //get user input for password parameters
 // which characters?  
 // how many characters? var = chacterAmount
@@ -14,11 +14,11 @@ const passLengthEl = document.getElementById("passLength");
 
 var generateBtn = document.querySelector("#generateBtn");
 
-function getPassLength () {
-console.log(passLengthEl.value)
+function getPassLengthBox () {
+console.log(passLengthBoxEl.value)
 };
 
-generateBtn.addEventListener("click", getPassLength);
+generateBtn.addEventListener("click", getPassLengthBox);
 
 // Assignment Code
 

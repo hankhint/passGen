@@ -21,6 +21,7 @@ body {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+
 }
 
 header {
@@ -41,7 +42,10 @@ header {
   max-width: 800px;
   padding: 30px 40px;
 }
-
+.card-header {
+  display: flex;
+  flex-direction: column;
+}
 .card-header::after {
   content: " ";
   display: block;
