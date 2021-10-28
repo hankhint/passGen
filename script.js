@@ -1,4 +1,15 @@
 const passLengthBoxEl = document.getElementById("passLengthBox");
+const passLengthSliderEl = document.getElementById("passLengthSlider");
+
+passLengthBoxEl.addEventListener('input', syncCharacterAmount)
+passLengthSliderEl.addEventListener('input', syncCharacterAmount)
+
+//keeps the slider and the input box synced with the same number
+function syncCharacterAmount(e) {
+    const value = e.target.value;
+    passLengthSliderEl.value = value;
+    passLengthBoxEl.value = value;
+}
 //get user input for password parameters
 // which characters?  
 // how many characters? var = chacterAmount

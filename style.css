@@ -31,6 +31,8 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+
+
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -45,6 +47,10 @@ header {
 .card-header {
   display: flex;
   flex-direction: column;
+}
+
+.number-input {
+  width:4rem;
 }
 .card-header::after {
   content: " ";
