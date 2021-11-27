@@ -1,13 +1,17 @@
+//variables for user input on password parameters
 const includeUppercaseElement = document.getElementById("upperChars");
 const includeLowercaseElement = document.getElementById("lowerChars");
 const includeSymbolsElement = document.getElementById("symbolChars");
 const includeNumbersElement = document.getElementById("numberChars");
+
+//variable for displaying password
 const passwordDisplay = document.getElementById("password");
 
 //variables and listeners for number input and slider
 const passLengthBoxEl = document.getElementById("passLengthBox");
 const passLengthSliderEl = document.getElementById("passLengthSlider");
 
+//event listeners to keep password length slider and input box synchronized with the same value
 passLengthBoxEl.addEventListener("input", syncCharacterAmount);
 passLengthSliderEl.addEventListener("input", syncCharacterAmount);
 
@@ -27,12 +31,12 @@ const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47)
   .concat(arrayFromLowToHigh(91, 96))
   .concat(arrayFromLowToHigh(123, 126));
 
-var generateBtn = document.querySelector("#generateBtn");
-
+//generate button variable and event listener
+  var generateBtn = document.querySelector("#generateBtn");
 generateBtn.addEventListener("click", passwordToBox);
 
 function passwordToBox() {
-  console.log("clickworked");
+ // console.log("clickworked");
   const characterAmount = passLengthBoxEl.value;
   const includeUppercase = includeUppercaseElement.checked;
   const includeLowercase = includeLowercaseElement.checked;
@@ -64,8 +68,9 @@ function generatePassword(
   if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES);
   if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES);
   const passwordCharacters = [];
-  for (let i = 0; i < characterAmount; i++ ) {
-    const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)];
+  for (let i = 0; i < characterAmount; i++) {
+    const characterCode =
+      charCodes[Math.floor(Math.random() * charCodes.length)];
     passwordCharacters.push(String.fromCharCode(characterCode));
   }
   return passwordCharacters.join("");
