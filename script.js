@@ -32,11 +32,11 @@ const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47)
   .concat(arrayFromLowToHigh(123, 126));
 
 //generate button variable and event listener
-  var generateBtn = document.querySelector("#generateBtn");
+var generateBtn = document.querySelector("#generateBtn");
 generateBtn.addEventListener("click", passwordToBox);
 
 function passwordToBox() {
- // console.log("clickworked");
+  // console.log("clickworked");
   const characterAmount = passLengthBoxEl.value;
   const includeUppercase = includeUppercaseElement.checked;
   const includeLowercase = includeLowercaseElement.checked;
@@ -55,11 +55,24 @@ function passwordToBox() {
 
 function generatePassword(
   characterAmount,
-  includeUppercase,
   includeLowercase,
+  includeUppercase,
   includeNumbers,
   includeSymbols
 ) {
+  //password parameter validation
+  if (
+    includeLowercase == false &&
+    includeUppercase == false &&
+    includeNumbers == false &&
+    includeSymbols == false
+  ) {
+    
+    //if no parameters are selected, do not generate a password
+    alert("Please select at least one type of character to be included");
+    return;
+  }
+
   //lowercase will be pushed twice
   let charCodes = LOWERCASE_CHAR_CODES;
   if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES);
