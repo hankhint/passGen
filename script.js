@@ -73,8 +73,10 @@ function generatePassword(
     return;
   }
 
-  //lowercase will be pushed twice
-  let charCodes = LOWERCASE_CHAR_CODES;
+  
+  //initializing charCodes
+  let charCodes = [0, 1];
+
   if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES);
   //lowercase will be pushed twice
   if (includeLowercase) charCodes = charCodes.concat(LOWERCASE_CHAR_CODES);
