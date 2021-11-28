@@ -68,7 +68,7 @@ function generatePassword(
     includeSymbols == false
   ) {
     
-    //if no parameters are selected, do not generate a password
+    //if no parameters are selected, do not generate a password and alert user
     alert("Please select at least one type of character to be included");
     return;
   }
