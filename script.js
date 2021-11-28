@@ -44,13 +44,13 @@ function passwordToBox() {
   const includeSymbols = includeSymbolsElement.checked;
   const password = generatePassword(
     characterAmount,
-    includeUppercase,
+    
     includeLowercase,
+    includeUppercase,
     includeNumbers,
     includeSymbols
   );
   passwordDisplay.innerText = password;
-  console.log(password);
 }
 
 function generatePassword(
@@ -60,7 +60,7 @@ function generatePassword(
   includeNumbers,
   includeSymbols
 ) {
-  //password parameter validation
+  //password parameter validation  USER MUST INPUT AT LEAST ONE PARAMETER
   if (
     includeLowercase == false &&
     includeUppercase == false &&
@@ -74,15 +74,34 @@ function generatePassword(
   }
 
   
-  //initializing charCodes
-  let charCodes = [0, 1];
+  //initializing charCodes, an array of all possible password characters
+  let charCodes = [];
 
-  if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES);
-  //lowercase will be pushed twice
-  if (includeLowercase) charCodes = charCodes.concat(LOWERCASE_CHAR_CODES);
-  if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES);
-  if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES);
+  //initializing variable for holding the password as it is concantenated
   const passwordCharacters = [];
+
+  if (includeUppercase) {
+    //inserting at least one uppercase letter
+passwordCharacters.push("A");
+   charCodes = charCodes.concat(UPPERCASE_CHAR_CODES);
+  }
+  //lowercase will be pushed twice
+  if (includeLowercase) {
+    //inserting at least one lowercase letter
+    passwordCharacters.push("a");
+    charCodes = charCodes.concat(LOWERCASE_CHAR_CODES);
+  }
+  if (includeNumbers) {
+//inserting at least one number
+  charCodes = charCodes.concat(NUMBER_CHAR_CODES);
+  passwordCharacters.push("1");
+  }
+  if (includeSymbols) {
+    //inserting at least one character
+    passwordCharacters.push("'");
+  charCodes = charCodes.concat(SYMBOL_CHAR_CODES);
+  }
+  
   for (let i = 0; i < characterAmount; i++) {
     const characterCode =
       charCodes[Math.floor(Math.random() * charCodes.length)];
