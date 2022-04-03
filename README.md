@@ -33,6 +33,8 @@ The application uses the MIT license.
 
 ## Screenshot
 ![image](https://user-images.githubusercontent.com/50533231/143725383-733ba768-f1ae-4ca9-af2c-9dcabf4efd58.png)
+Select your parameters and get your new password
+![image](https://user-images.githubusercontent.com/50533231/161453003-14007855-fd88-4824-9a27-17a447d9b456.png)
 
 ## Repository
 https://github.com/hankhint/password-generator
